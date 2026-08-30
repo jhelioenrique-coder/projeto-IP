@@ -1,0 +1,190 @@
+.home-container {
+    min-height: 100vh;
+    background-color: #55545d;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titulo-boas-vindas {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 50px 0 50px;
+}
+
+.home-content {
+    width: 100%;
+}
+
+.container-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    margin-left: 350px;
+}
+
+a.link-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 10px 16px;
+
+    background-color: #a77fdd;
+
+    border-radius: 8px;
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: background-color 0.2s ease;
+
+    cursor: pointer;
+
+    border: none;
+}
+
+a.link-header:visited {
+    color: #ffffff;
+}
+
+a.link-header:hover {
+    background-color: #4c0771;
+}
+
+a.link-header svg {
+    flex-shrink: 0;
+}
+
+a.link-header:last-child {
+    margin-left: 27px;
+}
+
+@media (max-width: 900px) {
+
+    .container-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        margin: 12px 0 0;
+    }
+
+    a.link-header {
+        border-radius: 8px;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    a.link-header:last-child {
+        margin-left: 0;
+    }
+}
+
+.quem-somos {
+    width: 760px;
+    max-width: 100%;
+
+    min-height: 400px;
+
+    margin: 0 auto 60px;
+
+    padding: 40px 50px;
+
+    box-sizing: border-box;
+
+    background: #fffbfb;
+
+    border-radius: 16px;
+
+    color: #222;
+}
+
+.quem-somos h2 {
+    margin: 0 0 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.quem-somos p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.linha-separadora {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    margin: 25px 0;
+}
+
+.card-ocorrencia {
+    width: 760px;
+    max-width: 100%;
+
+    min-height: 220px;
+
+    margin: 0 auto;
+
+    padding: 15px 12px;
+
+    box-sizing: border-box;
+
+    background: #f9ffff;
+
+    border-radius: 10px;
+}
+
+.card-ocorrencia h3 {
+    margin: 0 0 25px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #222;
+}
+
+.card-ocorrencia textarea {
+    width: 100%;
+    height: 100px;
+
+    padding: 12px;
+
+    box-sizing: border-box;
+
+    resize: none;
+
+    border: none;
+    border-radius: 3px;
+
+    background: #a49eaa;
+}
+
+.card-ocorrencia textarea::placeholder {
+    color: #edf0f4;
+    font-style: italic;
+}
+
+.card-ocorrencia button {
+    display: block;
+    margin: -40px 15px 0 auto;
+    position: relative;
+    width: 80px;
+    height: 28px;
+    border: none;
+    border-radius: 4px;
+    background: #1d07c5;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
