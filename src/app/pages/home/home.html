@@ -71,12 +71,25 @@
         <!-- CARD PARA DIGITAR -->
         <section class="card-ocorrencia">
 
-            <h3>Faça sua ocorrência aqui:</h3>
+            <h3>
+                Faça sua ocorrência aqui:
+            </h3>
 
-            <textarea placeholder="Escreva sua mensagem..."></textarea>
+            <div class="textarea-container">
 
-            <button>Enviar</button>
+                <textarea [(ngModel)]="mensagem">
+    </textarea>
 
+                @if (!mensagem) {
+                <span class="placeholder-text">
+                    Escreva sua mensagem...
+                    <ng-icon name="lucideEdit2" class="icon-editar">
+                    </ng-icon>
+                </span>
+                }
+
+            </div>
+            <button type="button" (click)="onSubmit()">Enviar</button>
         </section>
 
     </main>
