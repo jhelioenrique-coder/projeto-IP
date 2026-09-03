@@ -1,7 +1,7 @@
 .home-container {
     min-height: 100vh;
     background-color: #55545d;
-    padding: 16px;
+    padding: 0px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -13,7 +13,7 @@
     font-size: 28px;
     font-weight: 600;
     letter-spacing: 1px;
-    margin: 50px 0 50px;
+    margin: 0 0 100px;
 }
 
 .home-content {
@@ -23,10 +23,13 @@
 .container-links {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+
     gap: 12px;
 
     width: 100%;
-    margin-left: 350px;
+    padding: 30px;
+    margin-top: 20px;
 }
 
 a.link-header {
@@ -36,7 +39,7 @@ a.link-header {
 
     padding: 10px 16px;
 
-    background-color: #a77fdd;
+    background-color: #8a8da3;
 
     border-radius: 8px;
 
@@ -133,8 +136,8 @@ a.link-header:last-child {
 .card-ocorrencia {
     width: 760px;
     max-width: 100%;
-    min-height: 220px;
-    margin: 0 auto;
+    min-height: 320px;
+    margin: 0 auto 100px;
     padding: 15px 12px;
     box-sizing: border-box;
     background: #f9ffff;
@@ -155,9 +158,9 @@ a.link-header:last-child {
 
 .textarea-container textarea {
     width: 100%;
-    height: 100px;
+    height: 120px;
 
-    padding: 12px;
+    padding: 15px;
 
     box-sizing: border-box;
     resize: none;
@@ -198,7 +201,7 @@ a.link-header:last-child {
 
 .card-ocorrencia button {
     display: block;
-    margin: 0px 0px 0 auto;
+    margin: 0 auto;
 
     width: 80px;
     height: 28px;
@@ -237,7 +240,7 @@ a.link-header:last-child {
 .footer {
     width: 100%;
     height: 40px;
-    background-color: #46609c;
+    background-color: #6108b5;
 
     display: flex;
     align-items: center;
