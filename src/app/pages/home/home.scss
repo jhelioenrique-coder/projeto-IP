@@ -10,10 +10,11 @@
 .titulo-boas-vindas {
     text-align: center;
     color: white;
-    font-size: 28px;
+    font-size: 50px;
     font-weight: 600;
     letter-spacing: 1px;
-    margin: 0 0 100px;
+    margin: -40px 10px 100px;
+    position: relative;
 }
 
 .home-content {
@@ -37,14 +38,14 @@ a.link-header {
     align-items: center;
     gap: 5px;
 
-    padding: 10px 16px;
+    padding: 17px 20px;
 
     background-color: #8a8da3;
 
     border-radius: 8px;
 
     color: #ffffff;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
 
     text-decoration: none;

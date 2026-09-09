@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 export class Home {
 
   mensagem: string = '';
+  statusMenuAberto = false;
 
   async onSubmit() {
     console.log('Botão Enviar clicado');
