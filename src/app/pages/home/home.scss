@@ -147,31 +147,36 @@ a.link-header:last-child {
 
 .card-ocorrencia h3 {
     margin: 0 0 25px;
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #222;
+}
+
+.card-ocorrencia h4 {
+    margin: 50px 14px 25px;
+    font-size: 14px;
     font-weight: 400;
     color: #222;
 }
 
 .textarea-container {
     position: relative;
-    width: 100%;
 }
 
 .textarea-container textarea {
+    position: relative;
+    z-index: 2;
+
     width: 100%;
-    height: 120px;
+    height: 100%;
 
-    padding: 15px;
-
-    box-sizing: border-box;
-    resize: none;
-
+    background: transparent;
     border: none;
-    border-radius: 3px;
-
-    background: #a49eaa;
-
     outline: none;
+
+    padding: 20px 13px;
+
+    font-size: 15px;
 }
 
 .placeholder-text {
@@ -184,9 +189,11 @@ a.link-header:last-child {
     gap: 5px;
 
     color: #46609c;
-    font-size: 14px;
+    font-size: 18px;
+    font-style: italic;
 
     pointer-events: none;
+    z-index: 1;
 }
 
 .icon-editar {
@@ -221,6 +228,27 @@ a.link-header:last-child {
 
 .card-ocorrencia button:hover {
     background-color: #4838c1;
+}
+
+.seguranca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-right: -400px;
+}
+
+.icon-escudo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.card-ocorrencia h5 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #222;
 }
 
 .card-termo-seguranca {

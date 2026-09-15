@@ -23,12 +23,7 @@
 /* LOGO */
 .logo-area {
     background: #6108b520;
-
-    border: 1px solid #aaabde9e;
-    border-radius: 100px;
-
-    width: 120px;
-    height: 120px;
+    border-radius: 800px;
 
     display: flex;
     align-items: center;
@@ -40,9 +35,10 @@
 }
 
 .logo-area img {
-    width: 95px;
-    height: 95px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
+    border-radius: 60px;
 }
 
 
