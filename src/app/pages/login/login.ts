@@ -1,10 +1,70 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  standalone: true,
+  imports: [
+    RouterLink,
+    ReactiveFormsModule,
+  ],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
-export class Login { }
+export class Login {
+
+  loginForm: FormGroup;
+
+  isRecoveryMode = false;
+  mostrarSenha = false;
+
+  constructor(private fb: FormBuilder) {
+
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+
+  }
+
+  toggleRecoveryMode(): void {
+    this.isRecoveryMode = !this.isRecoveryMode;
+
+    if (this.isRecoveryMode) {
+      this.loginForm.get('password')?.clearValidators();
+      this.loginForm.get('password')?.updateValueAndValidity();
+    } else {
+      this.loginForm.get('password')?.setValidators([
+        Validators.required,
+        Validators.minLength(6)
+      ]);
+
+      this.loginForm.get('password')?.updateValueAndValidity();
+    }
+  }
+
+  onSubmit(): void {
+
+    if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
+      return;
+    }
+
+    if (this.isRecoveryMode) {
+      console.log(
+        'Solicitação de recuperação:',
+        this.loginForm.value.email
+      );
+
+      return;
+    }
+
+    console.log('Login:', this.loginForm.value);
+  }
+}
