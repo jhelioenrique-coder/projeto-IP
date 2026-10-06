@@ -21,7 +21,12 @@
     width: 100%;
 }
 
+/* MENU DO HEADER (conteúdo projetado, por isso fica aqui) */
 .container-links {
+    position: relative;
+    bottom: -43px;
+    right: 0;
+
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -29,8 +34,8 @@
     gap: 12px;
 
     width: 100%;
-    padding: 30px;
-    margin-top: 20px;
+    padding: 0 30px;
+    box-sizing: border-box;
 }
 
 a.link-header {
@@ -41,7 +46,6 @@ a.link-header {
     padding: 17px 20px;
 
     background-color: #8a8da3;
-
     border-radius: 8px;
 
     color: #ffffff;
@@ -49,13 +53,10 @@ a.link-header {
     font-weight: 500;
 
     text-decoration: none;
-
     white-space: nowrap;
 
     transition: background-color 0.2s ease;
-
     cursor: pointer;
-
     border: none;
 }
 
@@ -78,15 +79,16 @@ a.link-header:last-child {
 @media (max-width: 900px) {
 
     .container-links {
+        position: static;
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
+        gap: 8px;
         width: 100%;
-        margin: 12px 0 0;
+        padding: 0;
+        margin: 30px 0 0;
     }
 
     a.link-header {
-        border-radius: 8px;
         justify-content: flex-start;
         width: 100%;
     }
@@ -96,22 +98,16 @@ a.link-header:last-child {
     }
 }
 
+/* QUEM SOMOS */
 .quem-somos {
     width: 760px;
     max-width: 100%;
-
     min-height: 400px;
-
     margin: 0 auto 60px;
-
     padding: 40px 50px;
-
     box-sizing: border-box;
-
     background: #fffbfb;
-
     border-radius: 16px;
-
     color: #222;
 }
 
@@ -134,6 +130,20 @@ a.link-header:last-child {
     margin: 25px 0;
 }
 
+/* TERMO DE SEGURANÇA */
+.card-termo-seguranca {
+    width: 760px;
+    max-width: 100%;
+    min-height: 220px;
+    margin: 0 auto;
+    padding: 15px 12px;
+    box-sizing: border-box;
+    background: #f9ffff;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+/* CARD OCORRÊNCIA */
 .card-ocorrencia {
     width: 760px;
     max-width: 100%;
@@ -166,17 +176,12 @@ a.link-header:last-child {
 .textarea-container textarea {
     width: 100%;
     height: 120px;
-
     padding: 15px;
-
     box-sizing: border-box;
     resize: none;
-
     border: none;
     border-radius: 3px;
-
     background: #a49eaa;
-
     outline: none;
 }
 
@@ -248,32 +253,4 @@ a.link-header:last-child {
     font-size: 14px;
     font-weight: 400;
     color: #222;
-}
-
-.card-termo-seguranca {
-    width: 760px;
-    max-width: 100%;
-    min-height: 220px;
-    margin: 0 auto;
-    padding: 15px 12px;
-    box-sizing: border-box;
-    background: #f9ffff;
-    border-radius: 10px;
-}
-
-.card-termo-seguranca {
-    font-size: 12px;
-}
-
-.footer {
-    width: 100%;
-    height: 40px;
-    background-color: #6108b5;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 14px;
-
 }

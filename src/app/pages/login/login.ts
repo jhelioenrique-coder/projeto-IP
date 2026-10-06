@@ -1,19 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule
-} from '@angular/forms';
-
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Header } from '../../componentes/header/header';
+import { FooterDefault } from '../../componentes/footer-alt/footer-alt';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { featherCornerUpLeft } from '@ng-icons/feather-icons';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    RouterLink,
-    ReactiveFormsModule,
-  ],
+  imports: [RouterLink, ReactiveFormsModule, FooterDefault, Header, NgIcon,],
+  providers: [provideIcons({ featherCornerUpLeft })],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })

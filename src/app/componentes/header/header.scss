@@ -1,115 +1,37 @@
-.header-base {
+.header {
     width: 100%;
-    height: 500px;
+    height: 60%;
+    background: #6108b5;
 
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
     position: relative;
-    overflow: hidden;
-
-    background: linear-gradient(to bottom,
-            #6108b5 0%,
-            #6f2ec7 20%,
-            #7952cd 35%,
-            #8a5fd6 50%,
-            #9057db 60%,
-            #7d6a9a 75%,
-            #625f74 85%,
-            #55545d 100%);
-}
-
-
-/* LOGO */
-.logo-area {
-    background: #6108b520;
-    border-radius: 800px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    margin: 30px 0 0 25px;
-}
-
-.logo-area img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+    left: -30px;
+    top: 0px;
     object-fit: contain;
-    border-radius: 60px;
+    border: 1px solid white;
+    border-radius: 30%
 }
 
-
-/* TÍTULO */
-.header-title {
-    margin-left: 10px;
-    margin-top: 45px;
-
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 500;
-
-    white-space: nowrap;
-}
-
-
-/* MENU */
-.container-links {
-    position: absolute;
-
-    top: 500px;
-    left: 50px;
-
-    transform: translateX(-50%);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 18px;
-
-    width: max-content;
-
-}
-
-
-
-/* RESPONSIVO */
-@media (max-width: 900px) {
-
-    .header-base {
-        height: auto;
-        min-height: 500px;
-        flex-wrap: wrap;
-
-        padding: 20px;
-    }
-
-    .logo-area {
-        margin: 0;
-    }
-
-    .header-title {
-        margin-top: 30px;
-    }
-
-    .container-links {
-        position: static;
-
-        transform: none;
-
-        flex-direction: column;
-
-        width: 100%;
-
-        margin-top: 30px;
-
-        gap: 8px;
-    }
-
-    .link-header {
-        width: 100%;
-    }
+.title {
+    position: relative;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    left: -30px;
+    top: 0px;
 }

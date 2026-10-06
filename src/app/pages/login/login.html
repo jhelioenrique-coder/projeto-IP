@@ -1,96 +1,102 @@
-<section class="conteudo-pagina">
-    <div class="login-content">
+<div class="home-container">
+    <app-header></app-header>
 
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+    <section class="conteudo-pagina">
+        <div class="login-content">
 
-            <h2>
-                @if(!isRecoveryMode){
-                Login
-                } @else {
-                Redefinição de senha
-                }
-            </h2>
+            <button class="btn-voltar" routerLink="/">
+                <ng-icon name="featherCornerUpLeft" size="22"></ng-icon>
+                <span>Voltar</span>
+            </button>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
 
-            @if(isRecoveryMode){
-            <p class="recovery-text">
-                Informe seu email para receber o link de redefinição de senha.
-            </p>
-            }
+                <h2>
+                    @if(!isRecoveryMode){
+                    Login
+                    } @else {
+                    Redefinição de senha
+                    }
+                </h2>
 
-
-            <div class="form-group">
-
-                <label>Email</label>
-
-                <input type="email" placeholder="Digite seu email" formControlName="email" class="form-input">
-
-                @if (loginForm.get('email')?.touched &&
-                loginForm.get('email')?.invalid)
-                {
-                <small>Email inválido</small>
+                @if(isRecoveryMode){
+                <p class="recovery-text">
+                    Informe seu email para receber o link de redefinição de senha.
+                </p>
                 }
 
-            </div>
 
-            @if(!isRecoveryMode){
+                <div class="form-group">
 
-            <div class="form-group">
+                    <label>Email</label>
 
-                <label>Senha</label>
+                    <input type="email" placeholder="Digite seu email" formControlName="email" class="form-input">
 
-                <div class="password-field">
-                    <input [type]="mostrarSenha ? 'text' : 'password'" placeholder="Digite sua senha"
-                        formControlName="password" class="form-input">
+                    @if (loginForm.get('email')?.touched &&
+                    loginForm.get('email')?.invalid)
+                    {
+                    <small>Email inválido</small>
+                    }
 
                 </div>
 
-                @if (loginForm.get('password')?.touched && loginForm.get('password')?.invalid) {
-                <small>Mínimo 6 caracteres</small>
-                }
-            </div>
-
-            }
-
-            <button type="submit" class="submit-btn">
-
-                @if(!isRecoveryMode){
-                Entrar
-                } @else {
-                Enviar link
-                }
-
-            </button>
-
-            <div class="register-link">
-
                 @if(!isRecoveryMode){
 
-                <a routerLink="/cadastro">
-                    Cadastre-se
-                </a>
+                <div class="form-group">
 
-                <br />
+                    <label>Senha</label>
 
-                <a (click)="toggleRecoveryMode()">
-                    Esqueci a senha
-                </a>
+                    <div class="password-field">
+                        <input [type]="mostrarSenha ? 'text' : 'password'" placeholder="Digite sua senha"
+                            formControlName="password" class="form-input">
 
-                } @else {
+                    </div>
 
-                <a (click)="toggleRecoveryMode()">
-                    Voltar para login
-                </a>
+                    @if (loginForm.get('password')?.touched && loginForm.get('password')?.invalid) {
+                    <small>Mínimo 6 caracteres</small>
+                    }
+                </div>
 
                 }
 
-            </div>
+                <button type="submit" class="submit-btn">
 
-        </form>
+                    @if(!isRecoveryMode){
+                    Entrar
+                    } @else {
+                    Enviar link
+                    }
 
-    </div>
+                </button>
 
+                <div class="register-link">
 
-</section>
-<footer class="footer">
-    <p>© 2026 Insight Pulse. Todos os direitos reservados.</p>
-</footer>
+                    @if(!isRecoveryMode){
+
+                    <a routerLink="/cadastro">
+                        Cadastre-se
+                    </a>
+
+                    <br />
+
+                    <a (click)="toggleRecoveryMode()">
+                        Esqueci a senha
+                    </a>
+
+                    } @else {
+
+                    <a (click)="toggleRecoveryMode()">
+                        Voltar para login
+                    </a>
+
+                    }
+
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+    <app-footer-default></app-footer-default>
+
+</div>

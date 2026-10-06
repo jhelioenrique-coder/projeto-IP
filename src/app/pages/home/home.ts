@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Header } from '../../componentes/header/header';
+import { HeaderHome } from '../../componentes/header_home/headerHome';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideEdit2 } from '@ng-icons/lucide';
 import { FormsModule } from '@angular/forms';
+import { FooterDefault } from '../../componentes/footer-alt/footer-alt';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, Header, NgIcon, FormsModule],
+  imports: [RouterLink, HeaderHome, NgIcon, FormsModule, FooterDefault],
   providers: [
     provideIcons({
       lucideEdit2,
