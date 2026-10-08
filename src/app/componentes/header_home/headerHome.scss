@@ -4,7 +4,7 @@
 
 .header-base {
     width: 100%;
-    height: 500px;
+    height: 390px;
 
     display: flex;
     align-items: flex-start;
@@ -25,9 +25,6 @@
 
 /* LOGO */
 .logo-area {
-    background: #6108b520;
-    border-radius: 800px;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +38,8 @@
     width: 100px;
     height: 100px;
     object-fit: contain;
-    border-radius: 60px;
+    border: 1px solid white;
+    border-radius: 30%
 }
 
 /* TÍTULO (a cor e o tamanho passam para o texto projetado por herança) */
