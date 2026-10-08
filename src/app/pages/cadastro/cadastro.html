@@ -1,1 +1,83 @@
-<p>cadastro works!</p>
+<app-header>
+    <span header-title class="title-header">Cadastro</span>
+    <a routerLink="/">Inicio</a>
+    <a routerLink="/home">Home</a>
+</app-header>
+
+
+<!-- Content -->
+<main class="form-content">
+    <div class="form-card">
+        <h2 class="page-title">
+            Vamos realizar seu cadastro
+        </h2>
+
+        <form class="registration-form">
+            <div class="form-group">
+                <label>Nome Completo</label>
+                <input type="text" name="nome" class="form-input" placeholder="Digite seu Nome Completo"
+                    [(ngModel)]="usuario.nome">
+            </div>
+
+            <div class="form-group">
+                <label>CPF</label>
+                <input type="text" name="cpf" class="form-input" placeholder="000.000.000-00" maxlength="14"
+                    [(ngModel)]="usuario.cpf" (input)="formatarCPF()">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group half">
+                    <label>Data de Nascimento</label>
+                    <input type="text" name="nascimento" class="form-input" placeholder="DD/MM/AAAA" maxlength="10"
+                        [(ngModel)]="usuario.nascimento" (input)="formatarData()">
+                </div>
+                <div class="form-group half">
+                    <label>Celular</label>
+                    <input type="text" name="celular" class="form-input" placeholder="(**) ****-****" maxlength="15"
+                        [(ngModel)]="usuario.celular" (input)="formatarCelular()">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="form-input" placeholder="Digite seu email"
+                    [(ngModel)]="usuario.email">
+            </div>
+
+            <div class="form-group">
+                <label>Confirme seu email</label>
+                <input type="email" name="confEmail" class="form-input" placeholder="Digite novamente seu email">
+            </div>
+
+            <div class="form-group">
+                <label>Senha</label>
+                <div class="password-field">
+                    <input type="password" name="senha" class="form-input" placeholder="Digite sua senha" maxlength="6"
+                        [(ngModel)]="usuario.senha" [type]="mostrarSenha ? 'text' : 'password'">
+                    <span class="material-symbols-outlined toggle-senha-btn" (click)="mostrarSenha = !mostrarSenha"
+                        [attr.aria-label]="mostrarSenha ? 'Esconder senha' : 'Mostrar senha'">
+                        {{ mostrarSenha ? 'visibility_off' : 'visibility' }}
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Confirme sua senha</label>
+                <div class="password-field">
+                    <input type="password" name="confSenha" class="form-input" placeholder="Digite novamente sua senha"
+                        [type]="mostrarConfirmarSenha ? 'text' : 'password'">
+                    <span class="material-symbols-outlined toggle-senha-btn"
+                        (click)="mostrarConfirmarSenha = !mostrarConfirmarSenha"
+                        [attr.aria-label]="mostrarConfirmarSenha ? 'Esconder senha' : 'Mostrar senha'">
+                        {{ mostrarConfirmarSenha ? 'visibility_off' : 'visibility' }}
+                    </span>
+                </div>
+            </div>
+
+            <div class="action-footer">
+                <button class="btn btn-back" routerLink="/login">Voltar</button>
+                <button class="btn btn-next" type="button">Enviar</button>
+            </div>
+        </form>
+    </div>
+</main>
