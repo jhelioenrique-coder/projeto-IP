@@ -1,0 +1,68 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background: #646079
+}
+
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo-pagina {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+.app-footer-default {
+    margin-top: auto;
+}
+
+.chat-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    max-width: 380px;
+
+    margin-bottom: 90px;
+    padding: 28px;
+    border-radius: 20px;
+
+    background: rgba(213, 211, 215, 0.95);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-branco {
+    position: relative;
+
+    width: calc(100% - 350px);
+    height: calc(100vh - 133px);
+
+    margin-left: auto;
+    margin-right: 40px;
+    margin-top: -20px;
+
+    background-color: #f0f5f6;
+    border-radius: 16px;
+
+    box-sizing: border-box;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+    .card-branco {
+        margin-top: 0;
+        margin-left: 50px;
+        top: -10px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}
