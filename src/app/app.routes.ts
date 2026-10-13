@@ -18,7 +18,11 @@ export const routes: Routes = [
         loadComponent: () =>
             import('./pages/cadastro/cadastro').then(m => m.Cadastro)
     },
-
+    {
+        path: 'chat',
+        loadComponent: () =>
+            import('./pages/chat/chat').then(m => m.Chat)
+    },
 
     {
         path: '**',
