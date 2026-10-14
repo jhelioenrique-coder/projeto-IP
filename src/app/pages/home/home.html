@@ -6,7 +6,15 @@
             Insight Pulse
         </span>
 
-        <div header-menu class="container-links">
+        <!--botão hamburgue-->
+        <button header-menu-button class="botao-hamburguer" [class.ativo]="menuAberto"
+            (click)="menuAberto = !menuAberto" [attr.aria-expanded]="menuAberto" aria-label="Abrir ou fechar menu">
+            <span class="barra"></span>
+            <span class="barra"></span>
+            <span class="barra"></span>
+        </button>
+        <!--Menu com os quatro botoes-->
+        <div header-menu class="container-links" [class.menu-aberto]="menuAberto">
 
             <a class="link-header" routerLink="/chat">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"

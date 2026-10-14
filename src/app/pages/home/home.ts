@@ -22,6 +22,7 @@ export class Home {
 
   mensagem: string = '';
   statusMenuAberto = false;
+  menuAberto = false;
 
   async onSubmit() {
     console.log('Botão Enviar clicado');

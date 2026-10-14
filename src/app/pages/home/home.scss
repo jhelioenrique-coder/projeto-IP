@@ -1,27 +1,39 @@
+/* ================= BASE ================= */
 .home-container {
     min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
     background-color: #55545d;
-    padding: 0px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .titulo-boas-vindas {
+    position: relative;
     text-align: center;
-    color: white;
+    color: rgb(243, 237, 248);
     font-size: 50px;
     font-weight: 600;
     letter-spacing: 1px;
     margin: -40px 10px 100px;
-    position: relative;
+    z-index: 9999;
+
 }
 
 .home-content {
     width: 100%;
 }
 
-/* MENU DO HEADER (conteúdo projetado, por isso fica aqui) */
+/* ================= MENU (DESKTOP) ================= */
+/* conteúdo projetado no header, por isso o estilo fica aqui */
+
+.botao-hamburguer {
+    display: none;
+}
+
 .container-links {
     position: relative;
     bottom: -43px;
@@ -30,7 +42,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
     gap: 12px;
 
     width: 100%;
@@ -76,29 +87,7 @@ a.link-header:last-child {
     margin-left: 27px;
 }
 
-@media (max-width: 900px) {
-
-    .container-links {
-        position: static;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-        width: 100%;
-        padding: 0;
-        margin: 30px 0 0;
-    }
-
-    a.link-header {
-        justify-content: flex-start;
-        width: 100%;
-    }
-
-    a.link-header:last-child {
-        margin-left: 0;
-    }
-}
-
-/* QUEM SOMOS */
+/* ================= QUEM SOMOS ================= */
 .quem-somos {
     width: 760px;
     max-width: 100%;
@@ -130,7 +119,7 @@ a.link-header:last-child {
     margin: 25px 0;
 }
 
-/* TERMO DE SEGURANÇA */
+/* ================= TERMO DE SEGURANÇA ================= */
 .card-termo-seguranca {
     width: 760px;
     max-width: 100%;
@@ -143,7 +132,7 @@ a.link-header:last-child {
     font-size: 12px;
 }
 
-/* CARD OCORRÊNCIA */
+/* ================= CARD OCORRÊNCIA ================= */
 .card-ocorrencia {
     width: 760px;
     max-width: 100%;
@@ -239,7 +228,6 @@ a.link-header:last-child {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-right: -400px;
 }
 
 .icon-escudo {
@@ -253,4 +241,121 @@ a.link-header:last-child {
     font-size: 14px;
     font-weight: 400;
     color: #222;
+}
+
+/* ================= MOBILE / TELAS MENORES ================= */
+/* Tudo do dropdown fica DENTRO deste bloco */
+@media (max-width: 900px) {
+
+    .titulo-boas-vindas {
+        font-size: 38px;
+        margin: 2 10px 40px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Botão hambúrguer (3 barras que viram X) */
+    .botao-hamburguer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        margin-left: auto;
+        position: relative;
+        z-index: 1001;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .botao-hamburguer .barra {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.2s ease;
+    }
+
+    .botao-hamburguer.ativo .barra:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .botao-hamburguer.ativo .barra:nth-child(2) {
+        opacity: 0;
+    }
+
+    .botao-hamburguer.ativo .barra:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Card branco flutuante (fechado) */
+    .container-links {
+        position: absolute;
+        top: 90px;
+        right: 20px;
+        bottom: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 2px;
+
+        width: 260px;
+        max-width: calc(100vw - 40px);
+        margin: 0;
+        padding: 8px;
+        box-sizing: border-box;
+
+        background: #c5bbcb;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        z-index: 1000;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    }
+
+    /* Card aberto */
+    .container-links.menu-aberto {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* Botões dentro do card */
+    a.link-header,
+    a.link-header:visited {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 12px 14px;
+        margin: 0;
+
+        background: transparent;
+        color: #280d3d;
+        border-radius: 8px;
+        white-space: normal;
+    }
+
+    a.link-header:hover {
+        background: #671ca1;
+        color: #e2dfea;
+    }
+
+    a.link-header svg {
+        stroke: currentColor;
+    }
+
+    a.link-header:last-child {
+        margin-left: 0;
+    }
 }
