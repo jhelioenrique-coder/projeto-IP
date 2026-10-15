@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { Header } from '../../componentes/header/header';
 import { FooterDefault } from '../../componentes/footer-alt/footer-alt';
+import { FormsModule } from '@angular/forms';
+import { NgIcon, provideIcons } from '@ng-icons/core';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [Header, FooterDefault],
+  imports: [Header, FooterDefault, FormsModule, NgIcon],
   templateUrl: './chat.html',
   styleUrl: './chat.scss',
 })
@@ -16,10 +18,18 @@ export class Chat {
   ocorrencias: { status: string }[] = [];
 
   ocorrenciasFiltradas: { status: string }[] = [];
+  telaAtual: string = 'chat';
+  notificacoesAtivas: boolean = true;
 
   constructor(
     private location: Location
   ) { }
+
+  mudarTela(tela: string): void {
+    this.telaAtual = tela;
+    this.mostrarFiltro = false;
+  }
+
 
   goBack() {
     this.location.back();

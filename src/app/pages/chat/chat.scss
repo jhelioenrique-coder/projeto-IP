@@ -48,6 +48,7 @@
     background-color: #f0f5f6;
     border-radius: 16px;
     box-sizing: border-box;
+    padding: 20px 30px;
 }
 
 /* CELULAR */
@@ -183,4 +184,48 @@
 
 .filter-menu button:hover {
     background: #6147b7;
+}
+
+/* Botão selecionado no menu */
+.container-botoes button.ativo {
+    background-color: #7c3aed;
+    color: #ffffff;
+}
+
+/* Conteúdo das telas internas */
+.conteudo-interno {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.conteudo-interno h2 {
+    margin: 0 0 20px;
+    color: #3b0764;
+    font-size: 26px;
+}
+
+.conteudo-interno p {
+    margin-top: 20px;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.opcao-configuracao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: #444;
+}
+
+.btn-sair {
+    margin-top: auto;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+
 }

@@ -4,28 +4,35 @@
     <section class="conteudo-pagina">
 
         <div class="container-botoes">
-            <button class="btn-mensagem">
+
+            <button class="btn-mensagem" [class.ativo]="telaAtual === 'chat'" (click)="mudarTela('chat')">
                 Chat
             </button>
 
-            <button class="btn-Sobre">
+            <button class="btn-Sobre" [class.ativo]="telaAtual === 'sobre'" (click)="mudarTela('sobre')">
                 Sobre
             </button>
 
-            <button class="btn-Como">
+            <button class="btn-Como" [class.ativo]="telaAtual === 'como-funciona'" (click)="mudarTela('como-funciona')">
                 Como funciona
             </button>
 
-            <button class="btn-configarações">
+            <button class="btn-configarações" [class.ativo]="telaAtual === 'configuracoes'"
+                (click)="mudarTela('configuracoes')">
                 Configurações
             </button>
+
 
             <button class="btn-deletar">
                 Deletar
             </button>
         </div>
 
+
+        <!--Painel de conteudo-->
         <div class="card-branco">
+
+            @if (telaAtual ==='chat'){
             <div class="chat-header">
                 <a class="titulo-chat">Chat de comunicação</a>
 
@@ -52,7 +59,54 @@
             </div>
             <div class="linha-separadora"></div>
 
+            }
 
+
+
+            <!-- TELA: SOBRE -->
+            @if (telaAtual === 'sobre') {
+            <div class="conteudo-interno">
+                <h2>Sobre o Insight Pulse</h2>
+                <div class="linha-separadora"></div>
+
+                <p>
+                    O Insight Pulse é uma plataforma criada para
+                    facilitar a comunicação e a organização de informações.
+                </p>
+            </div>
+            }
+
+            <!-- TELA: COMO FUNCIONA -->
+            @if (telaAtual === 'como-funciona') {
+            <div class="conteudo-interno">
+                <h2>Como funciona</h2>
+                <div class="linha-separadora"></div>
+
+                <h3>1. Acesse o sistema</h3>
+                <p>Entre na plataforma para visualizar as funcionalidades.</p>
+
+                <h3>2. Escolha uma opção</h3>
+                <p>Utilize o menu lateral para navegar entre as seções.</p>
+
+                <h3>3. Consulte as informações</h3>
+                <p>Visualize e gerencie as informações disponíveis em cada tela.</p>
+            </div>
+            }
+
+            <!-- TELA: CONFIGURAÇÕES -->
+            @if (telaAtual === 'configuracoes') {
+            <div class="conteudo-interno">
+                <h2>Configurações</h2>
+                <div class="linha-separadora"></div>
+
+                <p>Personalize as preferências do sistema.</p>
+
+                <label class="opcao-configuracao">
+                    <input type="checkbox" [(ngModel)]="notificacoesAtivas">
+                    Ativar notificações
+                </label>
+            </div>
+            }
 
         </div>
 
