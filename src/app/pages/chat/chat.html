@@ -24,47 +24,36 @@
                 Deletar
             </button>
         </div>
+
         <div class="card-branco">
+            <div class="chat-header">
+                <a class="titulo-chat">Chat de comunicação</a>
 
-            <a class="titulo-chat"> Chat de comunicação </a>
-            <div class="filter">
-
-                <button class="btn-filter" (click)="toggleFiltro()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z" />
-                    </svg>
-
-                    <span>Filtrar</span>
-                </button>
-
-                @if (mostrarFiltro) {
-                <div class="filter-menu">
-
-                    <button (click)="filtrar('Todos')">
-                        Todos
+                <div class="filter">
+                    <button class="btn-filter" (click)="toggleFiltro()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z" />
+                        </svg>
+                        <span>Filtrar</span>
                     </button>
 
-                    <button (click)="filtrar('Pendente')">
-                        Pendentes
-                    </button>
-
-                    <button (click)="filtrar('Em andamento')">
-                        Em andamento
-                    </button>
-
-                    <button (click)="filtrar('Concluído')">
-                        Concluído
-                    </button>
-
+                    @if (mostrarFiltro) {
+                    <div class="filter-menu">
+                        <button (click)="filtrar('Todos')">Todos</button>
+                        <button (click)="filtrar('Respondido')">Respondido</button>
+                        <button (click)="filtrar('Não respondido')">Não respondido</button>
+                        <button (click)="filtrar('Mais recente')">Mais recente</button>
+                    </div>
+                    }
                 </div>
-                }
-
-                <!-- LINHA SEPARADORA -->
-                <div class="linha-separadora"></div>
 
             </div>
+            <div class="linha-separadora"></div>
+
+
+
         </div>
 
 

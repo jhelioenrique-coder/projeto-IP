@@ -1,7 +1,5 @@
-
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
-
 import { Header } from '../../componentes/header/header';
 import { FooterDefault } from '../../componentes/footer-alt/footer-alt';
 

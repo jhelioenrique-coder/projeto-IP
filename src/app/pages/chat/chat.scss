@@ -1,7 +1,7 @@
 :host {
     display: block;
     min-height: 100vh;
-    background: #646079
+    background: #646079;
 }
 
 .home-container {
@@ -40,17 +40,13 @@
 
 .card-branco {
     position: relative;
-
     width: calc(100% - 350px);
     height: calc(100vh - 133px);
-
     margin-left: auto;
     margin-right: 40px;
     margin-top: -20px;
-
     background-color: #f0f5f6;
     border-radius: 16px;
-
     box-sizing: border-box;
 }
 
@@ -67,17 +63,39 @@
     }
 }
 
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 24px 0;
+}
+
 .titulo-chat {
-    position: relative;
-    left: 30px;
-    text-align: right;
-    top: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin: 0;
     color: rgb(45, 5, 90);
     font-size: 20px;
     font-weight: 600;
 }
 
+.filter {
+    position: relative;
+    display: inline-block;
+    margin-left: 0;
+    flex-shrink: 0;
+}
 
+.linha-separadora {
+    width: calc(100% - 48px);
+    height: 1px;
+    background-color: rgb(110, 97, 132);
+    margin: 16px 24px 0;
+}
+
+/* ===== BOTÕES LATERAIS ===== */
 .container-botoes {
     display: flex;
     flex-direction: column;
@@ -114,22 +132,17 @@
     transition: 0.2s;
 }
 
-.linha-separadora {
-    width: 100%;
-    height: 1px;
-    background-color: rgb(110, 97, 132);
-    margin: 25px 0;
-}
+/* ===== BOTÃO FILTRAR ===== */
 
 .btn-filter {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    background: #5a6df0;
+    background: #755af0;
     border: none;
     font-size: 17px;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 6px 14px;
     color: white;
     cursor: pointer;
@@ -142,12 +155,7 @@
 }
 
 .btn-filter:hover {
-    background-color: #5a70d6;
-}
-
-.filter {
-    position: relative;
-    display: inline-block;
+    background-color: #4f11c1;
 }
 
 .filter-menu {
@@ -155,9 +163,9 @@
     top: calc(100% + 8px);
     right: 0;
     width: 190px;
-    background: white;
+    background: rgb(217, 214, 224);
     border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+    box-shadow: 0 8px 24px rgb(237, 236, 244);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -170,9 +178,9 @@
     background: transparent;
     text-align: left;
     cursor: pointer;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .filter-menu button:hover {
-    background: #f3f5f8;
+    background: #6147b7;
 }
