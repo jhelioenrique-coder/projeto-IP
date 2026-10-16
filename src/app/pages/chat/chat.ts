@@ -3,12 +3,12 @@ import { Location } from '@angular/common';
 import { Header } from '../../componentes/header/header';
 import { FooterDefault } from '../../componentes/footer-alt/footer-alt';
 import { FormsModule } from '@angular/forms';
-import { NgIcon, provideIcons } from '@ng-icons/core';
+
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [Header, FooterDefault, FormsModule, NgIcon],
+  imports: [Header, FooterDefault, FormsModule],
   templateUrl: './chat.html',
   styleUrl: './chat.scss',
 })
