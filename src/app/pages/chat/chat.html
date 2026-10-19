@@ -59,6 +59,36 @@
             </div>
             <div class="linha-separadora"></div>
 
+            <div class="lista-mensagens area-mensagens">
+
+                @if (chat.messages().length === 0) {
+                <div class="chat-vazio">
+                    <p>Nenhuma mensagem por enquanto.</p>
+                    <span>As ocorrências enviadas aparecerão aqui.</span>
+                </div>
+                } @else {
+                @for (mensagem of chat.messages(); track mensagem.id) {
+                <div class="mensagem" [class.admin]="mensagem.sender_role === 'admin'"
+                    [class.funcionario]="mensagem.sender_role === 'employee'">
+
+                    <div class="mensagem-remetente">
+                        {{ mensagem.sender_role === 'admin' ? 'RH - Empresa' : 'Funcionário' }}
+                    </div>
+
+                    <div class="mensagem-texto">
+                        {{ mensagem.body }}
+                    </div>
+
+                    <div class="mensagem-data">
+                        {{ mensagem.created_at | date:'dd/MM/yyyy HH:mm' }}
+                    </div>
+
+                </div>
+                }
+                }
+
+            </div>
+
             }
 
 

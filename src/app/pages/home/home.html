@@ -113,9 +113,9 @@
 
             </div>
 
-
-            <button type="button" class="btn-eviar" (click)="onSubmit()">Enviar</button>
-
+            <button type="button" class="btn-eviar" (click)="onSubmit()" [disabled]="enviando">
+                {{ enviando ? 'Enviando...' : 'Enviar' }}
+            </button>
             <h4>Seu espaço de comunicação, dúvidas, elogios, reclamações ou denúncias </h4>
 
             <div class="seguranca">
