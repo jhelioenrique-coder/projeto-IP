@@ -12,7 +12,7 @@
             Vamos realizar seu cadastro
         </h2>
 
-        <form class="registration-form">
+        <form class="registration-form" (ngSubmit)="proximo()">
             <div class="form-group">
                 <label>Nome Completo</label>
                 <input type="text" name="nome" class="form-input" placeholder="Digite seu Nome Completo"
@@ -52,8 +52,8 @@
             <div class="form-group">
                 <label>Senha</label>
                 <div class="password-field">
-                    <input type="password" name="senha" class="form-input" placeholder="Digite sua senha" maxlength="6"
-                        [(ngModel)]="usuario.senha" [type]="mostrarSenha ? 'text' : 'password'">
+                    <input name="senha" class="form-input" placeholder="Digite sua senha" [(ngModel)]="usuario.senha"
+                        [type]="mostrarSenha ? 'text' : 'password'">
                     <span class="material-symbols-outlined toggle-senha-btn" (click)="mostrarSenha = !mostrarSenha"
                         [attr.aria-label]="mostrarSenha ? 'Esconder senha' : 'Mostrar senha'">
                         {{ mostrarSenha ? 'visibility_off' : 'visibility' }}
@@ -64,7 +64,7 @@
             <div class="form-group">
                 <label>Confirme sua senha</label>
                 <div class="password-field">
-                    <input type="password" name="confSenha" class="form-input" placeholder="Digite novamente sua senha"
+                    <input name="confSenha" class="form-input" placeholder="Digite novamente sua senha"
                         [type]="mostrarConfirmarSenha ? 'text' : 'password'">
                     <span class="material-symbols-outlined toggle-senha-btn"
                         (click)="mostrarConfirmarSenha = !mostrarConfirmarSenha"
@@ -74,9 +74,18 @@
                 </div>
             </div>
 
+            @if (mensagem) {
+            <p class="form-mensagem" [class.erro]="tipoMensagem === 'erro'"
+                [class.sucesso]="tipoMensagem === 'sucesso'">
+                {{ mensagem }}
+            </p>
+            }
+
             <div class="action-footer">
-                <button class="btn btn-back" routerLink="/login">Voltar</button>
-                <button class="btn btn-next" type="button">Solicitar Acesso</button>
+                <button class="btn btn-back" type="button" routerLink="/login">Voltar</button>
+                <button class="btn btn-next" type="button" (click)="proximo()" [disabled]="carregando">
+                    {{ carregando ? 'Enviando...' : 'Solicitar Acesso' }}
+                </button>
             </div>
         </form>
     </div>
